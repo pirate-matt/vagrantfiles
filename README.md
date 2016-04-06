@@ -2,6 +2,20 @@
 
 These are the vagrant files I start with for each new project.  File names/paths should be indicative of what they are.  Feel free to add criticisms, comments, and clairvoyances.
 
+**Current output of `tree .`**  
+```
+├── README.md
+└── centos7
+    ├── Vagrantfile
+    ├── meteor
+    │   └── Vagrantfile
+    └── nodejs
+        └── Vagrantfile
+
+3 directories, 4 files
+```
+_[see overviews](#vagrantfile-overviews)_
+
 _I wonder if I should list these as boxes..._  I mean I suppose I _should_, but I don't think I'm going to until I'm certain they are awesome.  Until that point, I want to be able to freely change them with wild reckless abandon.  Github feels like a slightly better place for that.  So I'm going to keep this here.
 
 
@@ -44,7 +58,19 @@ This will get things kicking.  It will do a lot of magic if this is the first ti
 ---
 
 
-## Pertinent Descriptions
+## Vagrantfile Overviews
+
+```
+├── README.md
+└── centos7
+    ├── Vagrantfile
+    ├── meteor
+    │   └── Vagrantfile
+    └── nodejs
+        └── Vagrantfile
+
+3 directories, 4 files
+```
 
 #### centos7
 
