@@ -108,7 +108,7 @@ Currently using the latest meteor via: https://install.meteor.com/.
 
 ### debian8
 
-Currently using the base box: `debian/jessie64`, with the exception of wordpress
+Currently using the base box: `debian/contrib-jessie64`, file syncing between virtual and host was not working with the standard `debian/jessie64` box.
 
 By default:
 
@@ -121,10 +121,6 @@ By default:
 Currently using LTS 5x version
 
 ##### wordpress
-
-base box: `debian/contrib-jessie64`
-
-I had to switch up the base box due to a file sync issue between the virual machine and the host.
 
 This one does quite a bit of lifting for you.
 
