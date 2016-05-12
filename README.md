@@ -5,14 +5,20 @@ These are the vagrant files I start with for each new project.  File names/paths
 **Current output of `tree .`**  
 ```
 ├── README.md
-└── centos7
+├── centos7
+│   ├── Vagrantfile
+│   ├── meteor
+│   │   └── Vagrantfile
+│   └── nodejs
+│       └── Vagrantfile
+└── debian8
     ├── Vagrantfile
-    ├── meteor
+    ├── node
     │   └── Vagrantfile
-    └── nodejs
+    └── wordpress
         └── Vagrantfile
 
-3 directories, 4 files
+6 directories, 7 files
 ```
 _[see overviews](#vagrantfile-overviews)_
 
@@ -62,17 +68,23 @@ This will get things kicking.  It will do a lot of magic if this is the first ti
 
 ```
 ├── README.md
-└── centos7
+├── centos7
+│   ├── Vagrantfile
+│   ├── meteor
+│   │   └── Vagrantfile
+│   └── nodejs
+│       └── Vagrantfile
+└── debian8
     ├── Vagrantfile
-    ├── meteor
+    ├── node
     │   └── Vagrantfile
-    └── nodejs
+    └── wordpress
         └── Vagrantfile
 
-3 directories, 4 files
+6 directories, 7 files
 ```
 
-#### centos7
+### centos7
 
 Currently using the base box: **chef/centos-7.0**
 
@@ -94,4 +106,38 @@ Currently using the latest meteor via: https://install.meteor.com/.
 **TODO -** _Meteor has some issues seeing things inside the `/vagrant` folder on the VM (which is where you want your project files so you can edit them via your host machine).  See http://stackoverflow.com/questions/25712468/cant-create-working-meteor-js-project-on-a-vagrant-box for an explanation/solution.  But this **TODO** is about coming up with a way to do this automatically.  Hopefully without waiting until the meteor project is created, but if that doesn't seem feasible, provide a bash command/function that does it with a param of the project-directory-name or some such thing._
 
 
+### debian8
 
+Currently using the base box: `debian/jessie64`, with the exception of wordpress
+
+By default:
+
+* aliases `ll` --> `ls -l`
+* installs vim
+* installs git
+
+##### nodejs
+
+Currently using LTS 5x version
+
+##### wordpress
+
+base box: `debian/contrib-jessie64`
+
+I had to switch up the base box due to a file sync issue between the virual machine and the host.
+
+This one does quite a bit of lifting for you.
+
+It installs **apache**, **MySQL**, and **Wordpress files**.
+
+MySQL is setup with a root password specified by the following script line: `MYSQL_ROOT_PASS="development_password"`  (change it if you wish for a different one).
+
+The database & user that Wordpress will use is setup with the following lines of script (change them if you wish):
+
+```
+WP_DB_PASS=$MYSQL_ROOT_PASS
+WP_DB_USER="wordpressuser"
+WP_DB_DATABASE="wordpress"
+```
+
+These all then get set in the Wordpress config file: `wp-config`
