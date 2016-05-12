@@ -95,11 +95,11 @@ _By Default Installs_
 
 ##### nodejs
 
-Currently using nodejs LTS 4x version
+Currently using nodejs LTS 5x version
 
 ##### meteor
 
-Also currently using nodjs LTS 4x version
+Also currently using nodjs LTS 5x version
 
 Currently using the latest meteor via: https://install.meteor.com/.
 
